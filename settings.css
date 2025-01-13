@@ -1,0 +1,13 @@
+@import url("https://cdn.com/bootstrap.css") layer;
+
+h5 {
+  margin-bottom: 2rem;
+}
+h1 {
+  color: black;
+  font-family: sans-serif;
+}
+p {
+  color: black;
+  font-family: sans-serif;
+}
