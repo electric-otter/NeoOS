@@ -1,0 +1,39 @@
+<style>
+  :root {
+  --bg-color: white;
+  --text-color: black;
+}
+
+body.dark {
+  --bg-color: black;
+  --text-color: white;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+</style>
+<h1>Themes</h1>
+<button id="themeSwitch">Switch Theme</button>
+<script>
+  const body = document.body;
+const themeSwitch = document.getElementById('themeSwitch');
+
+function toggleTheme() {
+  body.classList.toggle('dark');
+  localStorage.setItem('theme', body.classList.contains('dark') ? 'dark' : 'light');
+}
+
+function applyTheme() {
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'dark') {
+    body.classList.add('dark');
+  } else {
+    body.classList.remove('dark');
+  }
+}
+
+themeSwitch.addEventListener('click', toggleTheme);
+window.onload = applyTheme;
+</script>
